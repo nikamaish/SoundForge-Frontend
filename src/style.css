@@ -1,3 +1,4 @@
+/* for my understanding, Home section */
 .home-page {
   min-height: 100vh;
   padding: 40px 8%;
@@ -279,4 +280,60 @@
   .empty-state {
     padding: 24px 14px;
   }
+}
+
+
+/* Common form components */
+.common-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.common-field label {
+  color: #e4e4e7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.common-field .p-inputtext,
+.common-field .p-dropdown {
+  width: 100%;
+}
+
+.common-field .p-inputtext,
+.common-field .p-password-input,
+.common-field .p-dropdown {
+  background: #22222c;
+  color: #ffffff;
+  border: 1px solid #3b3b48;
+  border-radius: 8px;
+}
+
+.common-field .p-inputtext,
+.common-field .p-password-input {
+  padding: 12px;
+}
+
+.common-field .p-inputtext:focus,
+.common-field .p-password-input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.15);
+}
+
+.common-field .p-invalid {
+  border-color: #ef4444;
+}
+
+.common-error {
+  color: #f87171;
+  font-size: 12px;
+}
+
+.common-button.p-button {
+  background: #9333ea;
+  border-color: #9333ea;
+  border-radius: 8px;
 }
