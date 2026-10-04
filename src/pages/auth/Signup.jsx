@@ -18,11 +18,13 @@ export default function Signup() {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting }, //destructuring formState to get errors and isSubmitting
   } = useForm({
     resolver: yupResolver(signupSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
     },
@@ -35,10 +37,11 @@ export default function Signup() {
     try {
       const response = await api.post("/auth/register", formData);
       setSuccessMessage(response.data?.message || "Registration successful!");
+        reset();
     } catch (error) {
       setServerError(
         error.response?.data?.message ||
-          "Registration failed. Please try again.",
+        "Registration failed. Please try again.",
       );
     }
   };
@@ -50,10 +53,18 @@ export default function Signup() {
         <p>Join SoundForge and find your sound.</p>
 
         <CommonInput
-          name="name"
+          name="firstName"
           control={control}
-          label="Full Name"
-          placeholder="Enter your name"
+          label="First Name"
+          placeholder="Enter your first name"
+          errors={errors}
+        />
+
+        <CommonInput
+          name="lastName"
+          control={control}
+          label="Last Name"
+          placeholder="Enter your last name"
           errors={errors}
         />
 

@@ -1,11 +1,15 @@
-
 import * as yup from "yup";
 
 export const signupSchema = yup.object({
-    name: yup
+    firstName: yup
         .string()
         .trim()
-        .required("Name is required"),
+        .required("First name is required"),
+
+    lastName: yup
+        .string()
+        .trim()
+        .required("Last name is required"),
 
     email: yup
         .string()

@@ -18,6 +18,7 @@ export default function Login() {
     const {
         control,
         handleSubmit,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm({
         resolver: yupResolver(loginSchema),
@@ -33,8 +34,8 @@ export default function Login() {
 
         try {
             const response = await api.post("/auth/login", formData);
-
             setSuccessMessage(response.data?.message || "Login successful!");
+              reset();
         } catch (error) {
             setServerError(
                 error.response?.data?.message ||
