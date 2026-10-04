@@ -1,3 +1,62 @@
+/* Nav section */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 5%;
+    background: #11111b;
+    border-bottom: 1px solid #302449;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c4b5fd;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navbar-brand i {
+    color: #a78bfa;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar-links a {
+    color: #d4d4e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #a78bfa;
+}
+
+.navbar-links .p-button {
+    background: #7c3aed;
+    border-color: #7c3aed;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+}
+
 /* for my understanding, Home section */
 .home-page {
   min-height: 100vh;
