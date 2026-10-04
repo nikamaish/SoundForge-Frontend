@@ -18,7 +18,7 @@ export default function Signup() {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }, //destructuring formState to get errors and isSubmitting
   } = useForm({
     resolver: yupResolver(signupSchema),
     defaultValues: {
@@ -34,7 +34,6 @@ export default function Signup() {
 
     try {
       const response = await api.post("/auth/register", formData);
-
       setSuccessMessage(response.data?.message || "Registration successful!");
     } catch (error) {
       setServerError(

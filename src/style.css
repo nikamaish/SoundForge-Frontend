@@ -282,8 +282,6 @@
   }
 }
 
-
-/* Common form components */
 .common-field {
   display: flex;
   flex-direction: column;
@@ -336,4 +334,146 @@
   background: #9333ea;
   border-color: #9333ea;
   border-radius: 8px;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(124, 58, 237, 0.18),
+            transparent 40%
+        ),
+        #0b0b12;
+    color: #f5f5f5;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 36px;
+    background: rgba(23, 23, 35, 0.95);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.auth-form h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.auth-form > p:not(.common-error) {
+    margin: -8px 0 8px;
+    color: #a1a1b5;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.common-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.common-field label {
+    color: #e5e5f0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.common-field .p-inputtext,
+.common-field .p-password-input,
+.common-field .p-dropdown {
+    width: 100%;
+    background: #11111b;
+    color: #ffffff;
+    border: 1px solid #373747;
+    border-radius: 10px;
+}
+
+.common-field .p-inputtext,
+.common-field .p-password-input {
+    padding: 12px 14px;
+}
+
+.common-field .p-inputtext::placeholder,
+.common-field .p-password-input::placeholder {
+    color: #77778d;
+}
+
+.common-field .p-inputtext:enabled:focus,
+.common-field .p-password-input:enabled:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15);
+}
+
+.common-field .p-password {
+    display: flex;
+    width: 100%;
+}
+
+.common-field .p-password-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.common-field .p-password .p-icon-field {
+    width: 100%;
+}
+
+.common-error {
+    color: #f87171;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.common-button {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 16px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    color: #ffffff;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.common-button:not(:disabled):hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.common-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 20px 14px;
+    }
+
+    .auth-form {
+        padding: 26px 20px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .auth-form h1 {
+        font-size: 24px;
+    }
 }
